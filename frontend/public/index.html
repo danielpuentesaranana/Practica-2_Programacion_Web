@@ -1,0 +1,379 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"/>
+  <title>Valles Pasiegos - E-Commerce</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <link rel="stylesheet" href="./styles.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Topbar -->
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <div class="brand">
+        <div class="logo">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+          </svg>
+        </div>
+        <span class="brand-name">Valles Pasiegos</span>
+        <span class="brand-tag">SHOP</span>
+      </div>
+      <nav class="top-actions">
+        <button id="btn-cart" class="btn-icon hide" title="Ver carrito">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="9" cy="21" r="1"></circle>
+            <circle cx="20" cy="21" r="1"></circle>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+          </svg>
+          <span id="cart-count" class="cart-badge">0</span>
+        </button>
+        <button id="btn-logout" class="btn btn-outline hide">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+            <polyline points="16 17 21 12 16 7"></polyline>
+            <line x1="21" y1="12" x2="9" y2="12"></line>
+          </svg>
+          Salir
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1 class="hero-title">Descubre los sabores<br/><span class="gradient-text">de los Valles Pasiegos</span></h1>
+        <p class="hero-subtitle" id="whoami">Cargando sesión…</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content Grid -->
+  <main class="container main-grid">
+    
+    <!-- Sidebar: Auth + Chat -->
+    <aside class="sidebar">
+      <!-- Auth Card -->
+      <section id="auth" class="card glass-card">
+        <div class="card-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+        </div>
+        <div class="card-header">
+          <h2>Bienvenido</h2>
+          <p class="muted">Accede para comprar y chatear</p>
+        </div>
+
+        <div class="tabs-modern">
+          <button class="tab-modern active" data-tab="tab-register">Registro</button>
+          <button class="tab-modern" data-tab="tab-login">Entrar</button>
+          <div class="tab-indicator"></div>
+        </div>
+
+        <div class="tab-panels">
+          <!-- Registro -->
+          <div id="tab-register" class="tab-panel active">
+            <div class="form-group">
+              <label for="reg-username">Usuario</label>
+              <div class="input-wrapper">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+                <input id="reg-username" placeholder="Tu nombre de usuario" autocomplete="username"/>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="reg-password">Contraseña</label>
+              <div class="input-wrapper">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                  <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                </svg>
+                <input id="reg-password" type="password" placeholder="••••••••" autocomplete="new-password"/>
+              </div>
+            </div>
+            <button id="btn-register" class="btn btn-primary btn-full">
+              Crear cuenta
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </button>
+          </div>
+
+          <!-- Login -->
+          <div id="tab-login" class="tab-panel" hidden>
+            <div class="form-group">
+              <label for="login-username">Usuario</label>
+              <div class="input-wrapper">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+                <input id="login-username" placeholder="Tu nombre de usuario" autocomplete="username"/>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="login-password">Contraseña</label>
+              <div class="input-wrapper">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                  <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                </svg>
+                <input id="login-password" type="password" placeholder="••••••••" autocomplete="current-password"/>
+              </div>
+            </div>
+            <button id="btn-login" class="btn btn-primary btn-full">
+              Iniciar sesión
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Chat Card -->
+      <section id="chat" class="card glass-card hide">
+        <div class="card-icon green">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+          </svg>
+        </div>
+        <div class="card-header">
+          <h2>Chat en vivo</h2>
+          <p class="muted">Conecta con la comunidad</p>
+        </div>
+        <div id="messages" class="messages-container"></div>
+        <div class="chat-input-wrapper">
+          <input id="msg" placeholder="Escribe un mensaje…"/>
+          <button id="btn-send" class="btn-send">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="22" y1="2" x2="11" y2="13"></line>
+              <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+            </svg>
+          </button>
+        </div>
+      </section>
+    </aside>
+
+    <!-- Main Content -->
+    <div class="content">
+      <!-- Mis Pedidos -->
+      <section id="my-orders-section" class="card glass-card hide">
+        <div class="card-header row-between">
+          <div class="header-with-icon">
+            <div class="card-icon orange">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+              </svg>
+            </div>
+            <div>
+              <h2>Mis Pedidos</h2>
+              <p class="muted">Historial de compras</p>
+            </div>
+          </div>
+        </div>
+        <div id="my-orders-list" class="orders-grid"></div>
+      </section>
+
+      <!-- Admin Section -->
+      <section id="admin-section" class="hide">
+        <!-- Gestión de Usuarios -->
+        <div class="card glass-card admin-card">
+          <div class="card-header row-between">
+            <div class="header-with-icon">
+              <div class="card-icon purple">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+              </div>
+              <div>
+                <h2>Gestión de Usuarios</h2>
+                <p class="muted">Administrar cuentas</p>
+              </div>
+            </div>
+          </div>
+          <div id="users-list"></div>
+        </div>
+
+        <!-- Gestión de Pedidos -->
+        <div class="card glass-card admin-card">
+          <div class="card-header row-between">
+            <div class="header-with-icon">
+              <div class="card-icon blue">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                  <polyline points="14 2 14 8 20 8"></polyline>
+                </svg>
+              </div>
+              <div>
+                <h2>Todos los Pedidos</h2>
+                <p class="muted">Gestionar entregas</p>
+              </div>
+            </div>
+            <select id="order-filter" class="select-modern">
+              <option value="">Todos</option>
+              <option value="pending">🟡 En curso</option>
+              <option value="completed">🟢 Completados</option>
+            </select>
+          </div>
+          <div id="orders-list"></div>
+        </div>
+      </section>
+
+      <!-- Productos -->
+      <section class="card glass-card">
+        <div class="card-header row-between">
+          <div class="header-with-icon">
+            <div class="card-icon green">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <path d="M16 10a4 4 0 0 1-8 0"></path>
+              </svg>
+            </div>
+            <div>
+              <h2>Nuestros Productos</h2>
+              <p class="muted">Artesanía y tradición</p>
+            </div>
+          </div>
+          <span class="badge-modern">Catálogo</span>
+        </div>
+
+        <!-- Panel Admin Crear Productos -->
+        <div id="admin-panel" class="admin-create-panel hide">
+          <div class="panel-header">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="12" y1="5" x2="12" y2="19"></line>
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+            </svg>
+            <span>Crear nuevo producto</span>
+          </div>
+          <div class="create-form">
+            <div class="form-row-grid">
+              <div class="form-group">
+                <label for="p-name">Nombre</label>
+                <input id="p-name" placeholder="Ej: Sobaos Pasiegos"/>
+              </div>
+              <div class="form-group">
+                <label for="p-price">Precio (€)</label>
+                <input id="p-price" type="number" step="0.01" placeholder="0.00"/>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="p-desc">Descripción</label>
+              <input id="p-desc" placeholder="Descripción del producto"/>
+            </div>
+            <div class="form-group">
+              <label for="p-imagen">URL de Imagen</label>
+              <input id="p-imagen" type="url" placeholder="https://ejemplo.com/imagen.jpg"/>
+            </div>
+            <button id="btn-create" class="btn btn-success">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="12" y1="5" x2="12" y2="19"></line>
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+              </svg>
+              Crear producto
+            </button>
+          </div>
+        </div>
+
+        <!-- Grid de productos -->
+        <div id="list" class="product-grid"></div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Modal Carrito -->
+  <div id="cart-modal" class="modal hide">
+    <div class="modal-backdrop"></div>
+    <div class="modal-content card glass-card">
+      <div class="modal-header">
+        <div class="header-with-icon">
+          <div class="card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="9" cy="21" r="1"></circle>
+              <circle cx="20" cy="21" r="1"></circle>
+              <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+            </svg>
+          </div>
+          <h2>Tu Carrito</h2>
+        </div>
+        <button id="close-cart" class="btn-close">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <div id="cart-items" class="cart-items"></div>
+      <div class="cart-footer">
+        <div id="cart-total" class="cart-total-display"></div>
+        <div class="cart-actions">
+          <button id="btn-clear-cart" class="btn btn-outline">Vaciar</button>
+          <button id="btn-checkout" class="btn btn-success btn-checkout">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+            Finalizar compra
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="toast hide"></div>
+
+  <!-- Scripts -->
+  <script>
+    // Tabs con animación
+    const tabs = document.querySelectorAll(".tabs-modern .tab-modern");
+    const panels = document.querySelectorAll(".tab-panel");
+    const indicator = document.querySelector(".tab-indicator");
+    
+    function updateIndicator(tab) {
+      if (indicator && tab) {
+        indicator.style.width = tab.offsetWidth + "px";
+        indicator.style.left = tab.offsetLeft + "px";
+      }
+    }
+    
+    tabs.forEach((tab, i) => {
+      tab.addEventListener("click", () => {
+        tabs.forEach(t => t.classList.remove("active"));
+        panels.forEach(p => { p.classList.remove("active"); p.hidden = true; });
+        tab.classList.add("active");
+        panels[i].classList.add("active");
+        panels[i].hidden = false;
+        updateIndicator(tab);
+      });
+    });
+    
+    setTimeout(() => updateIndicator(document.querySelector(".tab-modern.active")), 100);
+    
+    // Cerrar modal al click en backdrop
+    document.querySelector(".modal-backdrop")?.addEventListener("click", () => {
+      document.getElementById("cart-modal").classList.add("hide");
+    });
+  </script>
+
+  <script src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
+  <script src="./client.js"></script>
+</body>
+</html>
